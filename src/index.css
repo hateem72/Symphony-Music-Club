@@ -1,0 +1,98 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Music&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations */
+@keyframes glowPulse { 
+  0% { text-shadow: 0 0 10px #00FFFF; } 
+  50% { text-shadow: 0 0 20px #FF00FF, 0 0 30px #00FFFF; } 
+  100% { text-shadow: 0 0 10px #00FFFF; } 
+}
+
+@keyframes float { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-20px); } 
+}
+
+@keyframes pulseGlow { 
+  0% { 
+    text-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF, 0 0 40px #00FFFF;
+    transform: scale(1);
+  } 
+  50% { 
+    text-shadow: 0 0 25px #FF00FF, 0 0 35px #FF00FF, 0 0 60px #00FFFF;
+    transform: scale(1.05);
+  } 
+  100% { 
+    text-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF, 0 0 40px #00FFFF;
+    transform: scale(1);
+  } 
+}
+
+@keyframes pulse-slow { 
+  0% { opacity: 0.3; } 
+  50% { opacity: 0.8; } 
+  100% { opacity: 0.3; } 
+}
+
+@keyframes orbit { 
+  0% { transform: translate(-50%, -50%) rotate(0deg); } 
+  100% { transform: translate(-50%, -50%) rotate(360deg); } 
+}
+
+/* Utility Classes */
+.glow-pulse { animation: glowPulse 2s infinite; }
+.floating { animation: float 3s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
+
+.card-3d { 
+  transition: transform 0.6s ease, box-shadow 0.6s ease; 
+  transform-style: preserve-3d; 
+  perspective: 1000px; 
+}
+
+.card-3d.flipped { 
+  transform: rotateY(180deg); 
+}
+
+.card-3d:hover { 
+  box-shadow: 0 0 30px #00FFFF; 
+}
+
+.neon-border { 
+  border: 2px solid #00FFFF; 
+  box-shadow: 0 0 20px #00FFFF; 
+}
+
+.bg-gradient { 
+  background: radial-gradient(circle at center, #1a0033, #000000); 
+}
+
+.backdrop-blur-md { 
+  backdrop-filter: blur(8px); 
+}
+
+.backface-hidden { 
+  backface-visibility: hidden; 
+}
+
+/* New Outline Style for Cards */
+.outline-cyan-400 { 
+  outline-color: #00FFFF; 
+}
+
+.hover\:outline-offset-[-6px]:hover { 
+  outline-offset: -6px; 
+}
+
+.hover\:outline-offset-[-4px] { 
+  outline-offset: -4px; 
+}
